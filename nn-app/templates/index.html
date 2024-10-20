@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Predictor</title>
+</head>
+<body>
+    <h1>Neural Network Predictor</h1>
+    <form id="predictForm">
+        <input type="number" name="inputValue" placeholder="Enter a number" required />
+        <button type="submit">Predict</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('predictForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData,
+            });
+            const result = await response.json();
+            document.getElementById('result').innerText = `Predicted output: ${result.prediction}`;
+        };
+    </script>
+</body>
+</html>

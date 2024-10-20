@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Classifier</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Digit Classifier</h1>
+
+        <form id="upload-form">
+            <label for="file-upload">Upload 28x28 Image</label>
+            <input type="file" id="file-upload" accept="image/*" required>
+            <button type="submit" id="submit-button">Submit</button>
+        </form>
+
+        <canvas id="image-preview" style="display: none;"></canvas>
+        <div class="spinner" id="loading-spinner" style="display: none;"></div>
+        <div class="prediction" id="prediction-result"></div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

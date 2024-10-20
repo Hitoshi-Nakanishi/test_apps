@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pybind11 Web App</title>
+</head>
+<body>
+    <h1>Pybind11 Calculator</h1>
+    <form method="POST">
+        <input type="number" name="a" placeholder="Enter a number" required>
+        <input type="number" name="b" placeholder="Enter another number" required>
+        <select name="operation">
+            <option value="add">Add</option>
+            <option value="multiply">Multiply</option>
+        </select>
+        <button type="submit">Calculate</button>
+    </form>
+    {% if result is not none %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
